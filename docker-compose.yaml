@@ -1,0 +1,13 @@
+services:
+  postgres-dev-db:
+    container_name: postgres-dev-db-cnt
+    image: postgres:latest
+    volumes:
+      - ./db-data-dev:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: "db_postgres_dev"
+      POSTGRES_USER: "dev-usr"
+      POSTGRES_PASSWORD: "dev-pwd"
+      POSTGRES_ROOT_PASSWORD: "dev-root"
+    ports:
+      - "5432:5432"
